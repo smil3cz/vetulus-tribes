@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>spacesettlers</name>
+    </assembly>
+    <members>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.BuildingController.GetBuildings">
+            <summary>
+            Returns user's list of buildings
+            </summary>
+            <returns>Returns user's list of buildings</returns>
+            <response code="200">Returns user's list of buildings</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.BuildingController.PurchaseBuilding(GreenFoxAcademy.SpaceSettlers.Models.DTOs.BuildingsDtos.PurchaseBuildingDto)">
+            <summary>
+            Purchase a new building
+            </summary>
+            <returns>Purchase a new building</returns>
+            <response code="200">Purchase a new building according to specified type</response>
+            <response code="400">Missing or invalid building type</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.BuildingController.GetBuilding(System.Int64)">
+            <summary>
+            Returns building by Id
+            </summary>
+            <returns>Returns building by Id</returns>
+            <response code="200">Returns building by Id</response>
+            <response code="400">BuildingId not found</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.BuildingController.ChangeLevel(System.Int64)">
+            <summary>
+            Change building level
+            </summary>
+            <returns>Change building level</returns>
+            <response code="200">Change building level</response>
+            <response code="400">Missing, invalid or not found building level</response>
+            /// <response code="404">Building ID does not belong to the logged in user</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.KingdomController.GetKingdom(System.Nullable{System.Int64})">
+            <summary>
+            Returns user kingdom.
+            </summary>
+            <returns>Returns user kingdom.</returns>
+            <response code="200">Returns the user kingdom</response>
+            <response code="404">UserId not found</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.KingdomController.GetKingdomId(System.Int64)">
+            <summary>
+            Returns kingdom by Id.
+            </summary>
+            <returns>Returns kingdom.</returns>
+            <response code="200">Returns the kingdom</response>
+            <response code="404">Kingdom Id not found</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.KingdomController.ModifyKingdom(GreenFoxAcademy.SpaceSettlers.Models.DTOs.KingdomDtos.RequestKingdomDto)">
+            <summary>
+            Change name or location of kingdom.
+            </summary>
+            <returns>Returns user kingdom.</returns>
+            <response code="200">Returns the user kingdom</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.LeaderboardController.GetLeaderboardByShips(System.String)">
+            <summary>
+            Returns leaderboard list of the best players by ships or buildings
+            </summary>
+            <returns>Returns leaderboard list of the best players by ships or buildings</returns>
+            <response code="200">Returns leaderboard list of the best players by ships or buildings</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.ResourceController.GetAllResources">
+            <summary>
+            Returns all resources from specific kingdom.
+            </summary>
+            <returns>Returns list of all of specified kingdom's resources</returns>
+            <response code="200">Returns the list of resources</response>
+            <response code="404">Returns "No resources found."</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.ResourceController.ResourceInformation(System.Int32)">
+            <summary>
+            Returns specified resource data.
+            </summary>
+            <returns>Returns resourceDTO</returns>
+            <response code="200">Returns resourceDTO</response>
+            <response code="404">Returns "Resource not found"</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.ShipController.CreateShip(GreenFoxAcademy.SpaceSettlers.Models.DTOs.ShipDto)">
+            <summary>
+            Creates ship for current kingdom.
+            </summary>
+            <returns>Returns new ship of kingdom.</returns>
+            <response code="200">Returns new ship</response>
+            <response code="400">Returns status with message.</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.ShipController.GetAllShips">
+            <summary>
+            Returns all ships of current kingdom.
+            </summary>
+            <returns>Returns all ships of current kingdom.</returns>
+            <response code="200">Returns all ships of current kingdom.</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.ShipController.GetShipDetail(System.Int64)">
+            <summary>
+            Get selected ship of current kingdom.
+            </summary>
+            <returns>Returns selected ship of current kingdom.</returns>
+            <response code="200">Returns ship details.</response>
+            <response code="404">Returns Status status with message.</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.ShipController.UpdateShip(System.Int64)">
+            <summary>
+            Update specified ship level
+            </summary>
+            <returns>Return updated ship</returns>
+            <response code="200">Return ship object</response>
+            <response code="400">Return status with message</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.UserController.RegUser(GreenFoxAcademy.SpaceSettlers.Models.DTOs.UserDto)">
+            <summary>
+            Register new user.
+            </summary>
+            <returns>Returns user dto</returns>
+            <response code="200">Returns user dto.</response>
+            <response code="400">Missing parameter(s).</response>
+            <response code="409">Username already taken, please choose an other one.</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.UserController.LogUser(GreenFoxAcademy.SpaceSettlers.Models.DTOs.UserDto)">
+            <summary>
+            Login user and return token.
+            </summary>
+            <returns>Returns token.</returns>
+            <response code="200">Returns the user JWT token</response>
+            <response code="400">Missing username.</response>
+            <response code="401">Wrong username or password.</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.UserController.Logout">
+            <summary>
+            Logout user and forgets the token.
+            </summary>
+            <returns>Ok, succesfully logout.</returns>
+            <response code="205">Succesful logout</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.UserController.VerifyEmail(System.String)">
+            <summary>
+            Verify email address with token
+            </summary>
+            <returns>Ok, succesfully logout.</returns>
+            <response code="200">Succesful verification</response>
+            <response code="400">Unsuccessful verification</response>
+        </member>
+        <member name="M:GreenFoxAcademy.SpaceSettlers.Controllers.UserController.Logs">
+            <summary>
+            See all logs saved in database.
+            </summary>
+            <returns>Ok, list of logs.</returns>
+            <response code="200">Successfully retrieved logs</response>
+            <response code="404">No logs found</response>
+        </member>
+    </members>
+</doc>
