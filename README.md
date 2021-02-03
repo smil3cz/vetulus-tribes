@@ -7,4 +7,4 @@ Entity Framework \
 JWT authorization \
 PostgreSQL
 
-JSON responds from endpoints checked by Swagger UI.
+JSON responses from endpoints checked by Swagger UI.
